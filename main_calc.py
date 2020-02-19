@@ -31,6 +31,7 @@ assets_dict = {
     'retirement_accts_posttax_balance': 3500,  # Roth
     'retirement_accts_posttax_contrib_monthly': 0,  # enter as % of net (post-tax) income -- offer choice (% or value) as radio button?
     'home_equity': 0,
+    # TODO: https://www.reddit.com/r/financialindependence/comments/f0kabc/how_to_calculate_your_fire_number_when_you_have_a/
     'car_value': 0
 }
 
