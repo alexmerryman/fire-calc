@@ -4,19 +4,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-df = pd.DataFrame.from_dict({'date': ['1/1/2020', '2/1/2020', '3/1/2020', '4/1/2020', '6/1/2020', '12/1/2020',
-                                      '6/1/2021', '12/1/2021', '6/1/2022', '12/1/2022', '6/1/2023', '12/1/2023',
-                                      '6/1/2024', '12/1/2024', '6/1/2025', '12/1/2025', '6/1/2026', '12/1/2026',
-                                      '6/1/2027', '12/1/2027', '6/1/2028', '12/1/2028', '6/1/2029', '12/1/2029',
-                                      '6/1/2030', '12/1/2030', '6/1/2031', '12/1/2031', '6/1/2032', '12/1/2032',
-                                      '6/1/2033', '12/1/2033', '6/1/2034', '12/1/2034', '6/1/2035', '12/1/2035',
-                                      '6/1/2036', '12/1/2036', '6/1/2037', '12/1/2037', '6/1/2038', '12/1/2038'],
-                             'assets': [8000, 9500, 11000, 13000, 13000, 13000]*7,
-                             'liabilities': [-10000, -9000, -7500]*2*7})
+from main_calc import main_calc
 
-
-# churn_trace_text = {True: 'Churned',
-#                     False: "Didn't churn"}
+df = main_calc()
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -47,8 +37,9 @@ app.layout = html.Div([
         dcc.Graph(id='net-worth-chart',
                   figure=dict(
                       data=[
-                          dict(x=df['date'], y=df['assets'], type='line', name='Assets'),
-                          dict(x=df['date'], y=df['liabilities'], type='line', name='Liabilities'),
+                          dict(x=df['date'], y=df['Assets'], type='line', name='Assets'),
+                          dict(x=df['date'], y=df['Liabilities'], type='line', name='Liabilities'),
+                          dict(x=df['date'], y=df['Net Worth'], type='line', name='Net Worth')
                       ],
                       layout=dict(title='Net Worth', xaxis_title='Date'),
                   )
