@@ -119,4 +119,4 @@ def main_calc():
 
     return df
 
-df = main_calc()
+# df = main_calc()
