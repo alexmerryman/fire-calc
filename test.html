@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+</script>
+
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
-    <script src="test.js"></script>
-</head>
-<body>
-    <h1>Welcome to your Bank!</h1>
+    <title>jQuery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-</body>
+    <style>
+        .turnBlue {
+            color:white;
+            background:blue;
+        }
+        .turnRed {
+            color:white;
+            background:red;
+        }
+    </style>
+
+</head>
+
+    <body>
+        <div class="container">
+            <h1>Selecting with jQuery</h1>
+            <p>You can use the $ sign to select elements from the DOM with jQuery -- similar to using querySelectorAll().</p>
+            <p>For example:</p>
+            <ul>
+                <li>Select all a tags:</li>
+                <ul>
+                    <li>$('a')</li>
+                </ul>
+                <li>Select all elements from the class "container":</li>
+                <ul>
+                    <li>$('.container')</li>
+                </ul>
+                <li>Select all elements with id "special":</li>
+                <ul>
+                    <li id="special">$('#special')</li>
+                </ul>
+            </ul>
+
+            <h2>Here are some inputs</h2>
+            <h3>Later we will use jQuery to interact with them.</h3>
+            <input type="text" name="" value="Enter your name">
+            <input type="submit" name="" value="Submit">
+        </div>
+        <script src="test.js">
+        </script>
+
+    </body>
 </html>
